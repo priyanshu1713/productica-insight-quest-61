@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from "react-router-dom";
 
@@ -10,7 +9,11 @@ const Footer = () => {
           <div>
             <div className="flex items-center gap-2 mb-6">
               <div className="w-10 h-10 rounded-lg bg-productica-blue flex items-center justify-center">
-                <span className="text-white text-xl font-bold">P</span>
+                <img 
+                  src="/lovable-uploads/52f9b08d-8558-4dae-b4bd-dad6b850602e.png" 
+                  alt="Productica Logo" 
+                  className="w-6 h-6 object-contain"
+                />
               </div>
               <span className="text-xl font-bold">Productica</span>
             </div>
