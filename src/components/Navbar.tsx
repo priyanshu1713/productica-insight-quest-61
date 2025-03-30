@@ -5,6 +5,13 @@ import { Link } from "react-router-dom";
 import { MessageCircle } from "lucide-react";
 
 const Navbar = () => {
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <nav className="py-4 border-b border-gray-800 sticky top-0 z-50 backdrop-blur-md bg-productica-blue-dark/80">
       <div className="container mx-auto flex items-center justify-between">
@@ -16,10 +23,24 @@ const Navbar = () => {
         </div>
         
         <div className="hidden md:flex items-center gap-10">
-          <Link to="/" className="text-sm text-gray-300 hover:text-white transition-colors">Home</Link>
-          <Link to="/features" className="text-sm text-gray-300 hover:text-white transition-colors">Features</Link>
-          <Link to="/pricing" className="text-sm text-gray-300 hover:text-white transition-colors">Pricing</Link>
-          <Link to="/blog" className="text-sm text-gray-300 hover:text-white transition-colors">Blog</Link>
+          <button 
+            onClick={() => scrollToSection('features')} 
+            className="text-sm text-gray-300 hover:text-white transition-colors"
+          >
+            Features
+          </button>
+          <button 
+            onClick={() => scrollToSection('pricing')} 
+            className="text-sm text-gray-300 hover:text-white transition-colors"
+          >
+            Pricing
+          </button>
+          <Link to="/blog" className="text-sm text-gray-300 hover:text-white transition-colors">
+            Blog
+          </Link>
+          <Link to="/" className="text-sm text-gray-300 hover:text-white transition-colors">
+            Home
+          </Link>
         </div>
         
         <div className="flex items-center gap-4">
