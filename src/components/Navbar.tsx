@@ -1,15 +1,25 @@
 
 import React from 'react';
 import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { MessageCircle } from "lucide-react";
 
 const Navbar = () => {
+  const navigate = useNavigate();
+
   const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+    // If we're not on the home page, navigate to home first
+    if (window.location.pathname !== '/') {
+      navigate('/');
     }
+    
+    // Use setTimeout to ensure scroll happens after navigation
+    setTimeout(() => {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }, 100);
   };
 
   return (
@@ -23,6 +33,9 @@ const Navbar = () => {
         </div>
         
         <div className="hidden md:flex items-center gap-10">
+          <Link to="/" className="text-sm text-gray-300 hover:text-white transition-colors">
+            Home
+          </Link>
           <button 
             onClick={() => scrollToSection('features')} 
             className="text-sm text-gray-300 hover:text-white transition-colors"
@@ -37,9 +50,6 @@ const Navbar = () => {
           </button>
           <Link to="/blog" className="text-sm text-gray-300 hover:text-white transition-colors">
             Blog
-          </Link>
-          <Link to="/" className="text-sm text-gray-300 hover:text-white transition-colors">
-            Home
           </Link>
         </div>
         
