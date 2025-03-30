@@ -4,8 +4,34 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   const openTermsAndConditions = () => {
-    // Open terms in a new tab
-    window.open("https://www.productica.in/terms-and-conditions", "_blank");
+    // Create a Blob with the Terms and Conditions text
+    const termsContent = `TERMS AND CONDITIONS 
+Last updated January 05, 2025 
+AGREEMENT TO OUR LEGAL TERMS 
+We are LETS CONNECT GROUP , doing business as Productica ('Company', 'we', 'us', or 
+'our'), a company registered in India at Vadodara, Vadodara, Gujarat 390016. 
+
+We operate the website http://www.productica.in (the 'Site'), as well as any other related 
+products and services that refer or link to these legal terms (the 'Legal Terms') (collectively, 
+the 'Services'). 
+
+we provide reports which include current market scenario, swot analysis, marketing strategies 
+and many more of the user's product.
+
+You can contact us by phone at +917069133331, email at info@productica.in, or by mail 
+to Vadodara, Vadodara, Gujarat 390016, India.`;
+
+    // Create a Blob with the content
+    const blob = new Blob([termsContent], { type: 'text/plain' });
+    
+    // Create a URL for the Blob
+    const url = URL.createObjectURL(blob);
+    
+    // Open the URL in a new tab
+    window.open(url, '_blank');
+    
+    // Clean up the URL object after the window is opened
+    setTimeout(() => URL.revokeObjectURL(url), 100);
   };
 
   return (
