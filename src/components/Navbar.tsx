@@ -11,15 +11,21 @@ const Navbar = () => {
     // If we're not on the home page, navigate to home first
     if (window.location.pathname !== '/') {
       navigate('/');
-    }
-    
-    // Use setTimeout to ensure scroll happens after navigation
-    setTimeout(() => {
+      
+      // Use setTimeout to ensure scroll happens after navigation
+      setTimeout(() => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    } else {
+      // We're already on the home page, just scroll
       const element = document.getElementById(sectionId);
       if (element) {
         element.scrollIntoView({ behavior: 'smooth' });
       }
-    }, 100);
+    }
   };
 
   return (
@@ -48,8 +54,8 @@ const Navbar = () => {
           >
             Pricing
           </button>
-          <Link to="/blog" className="text-sm text-gray-300 hover:text-white transition-colors">
-            Blog
+          <Link to="/contact" className="text-sm text-gray-300 hover:text-white transition-colors">
+            Contact
           </Link>
         </div>
         
