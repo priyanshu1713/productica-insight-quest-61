@@ -1,15 +1,16 @@
 
 import React from 'react';
 import { Button } from "@/components/ui/button";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import { MessageCircle } from "lucide-react";
 
 const Navbar = () => {
   const navigate = useNavigate();
+  const location = useLocation();
 
   const scrollToSection = (sectionId: string) => {
     // If we're not on the home page, navigate to home first
-    if (window.location.pathname !== '/') {
+    if (location.pathname !== '/') {
       navigate('/');
       
       // Use setTimeout to ensure scroll happens after navigation
@@ -28,6 +29,16 @@ const Navbar = () => {
     }
   };
 
+  const handleHomeClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    if (location.pathname !== '/') {
+      navigate('/');
+    } else {
+      // If already on home page, scroll to top smoothly
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
+
   return (
     <nav className="py-4 border-b border-gray-800 sticky top-0 z-50 backdrop-blur-md bg-productica-blue-dark/80">
       <div className="container mx-auto flex items-center justify-between">
@@ -43,9 +54,13 @@ const Navbar = () => {
         </div>
         
         <div className="hidden md:flex items-center gap-10">
-          <Link to="/" className="text-sm text-gray-300 hover:text-white transition-colors">
+          <a 
+            href="/" 
+            onClick={handleHomeClick}
+            className="text-sm text-gray-300 hover:text-white transition-colors"
+          >
             Home
-          </Link>
+          </a>
           <button 
             onClick={() => scrollToSection('features')} 
             className="text-sm text-gray-300 hover:text-white transition-colors"
