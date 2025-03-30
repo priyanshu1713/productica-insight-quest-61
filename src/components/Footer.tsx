@@ -1,7 +1,13 @@
+
 import React from 'react';
 import { Link } from "react-router-dom";
 
 const Footer = () => {
+  const openTermsAndConditions = () => {
+    // Open terms in a new tab
+    window.open("https://www.productica.in/terms-and-conditions", "_blank");
+  };
+
   return (
     <footer className="py-12 border-t border-gray-800">
       <div className="container mx-auto">
@@ -85,12 +91,12 @@ const Footer = () => {
               <Link to="/privacy" className="text-gray-400 hover:text-white transition-colors text-sm">
                 Privacy Policy
               </Link>
-              <Link to="/terms" className="text-gray-400 hover:text-white transition-colors text-sm">
+              <button 
+                onClick={openTermsAndConditions} 
+                className="text-gray-400 hover:text-white transition-colors text-sm cursor-pointer"
+              >
                 Terms of Service
-              </Link>
-              <Link to="/cookies" className="text-gray-400 hover:text-white transition-colors text-sm">
-                Cookies
-              </Link>
+              </button>
             </div>
           </div>
         </div>
