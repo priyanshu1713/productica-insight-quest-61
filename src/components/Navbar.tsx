@@ -57,23 +57,23 @@ const Navbar = () => {
           <a 
             href="/" 
             onClick={handleHomeClick}
-            className="text-sm text-gray-300 hover:text-white transition-colors"
+            className="text-sm text-gray-300 hover:text-white transition-colors duration-300"
           >
             Home
           </a>
           <button 
             onClick={() => scrollToSection('features')} 
-            className="text-sm text-gray-300 hover:text-white transition-colors"
+            className="text-sm text-gray-300 hover:text-white transition-colors duration-300"
           >
             Features
           </button>
           <button 
             onClick={() => scrollToSection('pricing')} 
-            className="text-sm text-gray-300 hover:text-white transition-colors"
+            className="text-sm text-gray-300 hover:text-white transition-colors duration-300"
           >
             Pricing
           </button>
-          <Link to="/contact" className="text-sm text-gray-300 hover:text-white transition-colors">
+          <Link to="/contact" className="text-sm text-gray-300 hover:text-white transition-colors duration-300">
             Contact
           </Link>
         </div>
