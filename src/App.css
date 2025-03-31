@@ -85,6 +85,16 @@
   }
 }
 
+/* Partner logos scrolling animation */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-100% / 2));
+  }
+}
+
 .animate-fade-in {
   animation: fadeIn 0.4s ease-out forwards;
 }
@@ -95,6 +105,10 @@
 
 .animate-pulse-slow {
   animation: pulse 3s infinite;
+}
+
+.animate-scroll {
+  animation: scroll 30s linear infinite;
 }
 
 .section-highlight {

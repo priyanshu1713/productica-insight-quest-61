@@ -1,6 +1,8 @@
+
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import Partners from './Partners';
 
 const Hero = () => {
   return (
@@ -30,16 +32,16 @@ const Hero = () => {
             giving entrepreneurs and businesses data-backed insights for confident decision making.
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-4 animate-fade-in">
+          <div className="animate-fade-in">
             <Button size="lg" className="bg-productica-blue hover:bg-productica-blue-light">
               <a href="https://productica.in/agent.html" className="flex items-center">
                 Start Your Analysis <ArrowRight className="ml-2 h-4 w-4" />
               </a>
             </Button>
-            <Button size="lg" variant="outline">
-              <a href="/features">Explore Features</a>
-            </Button>
           </div>
+          
+          {/* Partners section instead of Explore Features button */}
+          <Partners />
           
           <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 w-full">
             <div className="bg-productica-blue-dark/50 border border-gray-800 rounded-lg p-6 backdrop-blur-sm">
