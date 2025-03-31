@@ -103,28 +103,6 @@ const Partners = () => {
           </div>
         </div>
       </div>
-
-      {/* Add CSS for the animations */}
-      <style jsx>{`
-        @keyframes floatAnimation {
-          0% { transform: translateY(0); }
-          50% { transform: translateY(-5px); }
-          100% { transform: translateY(0); }
-        }
-        
-        .highlight-logo {
-          animation: floatAnimation 2s ease-in-out;
-        }
-        
-        .partner-logo-container:hover .partner-logo {
-          transform: scale(1.05);
-          transition: transform 0.3s ease-out;
-        }
-        
-        .partner-logo {
-          transition: transform 0.3s ease-out, opacity 0.3s ease;
-        }
-      `}</style>
     </div>
   );
 };
