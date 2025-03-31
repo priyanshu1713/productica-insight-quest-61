@@ -93,8 +93,8 @@ const ContactSection = () => {
                   </div>
                   <div>
                     <h3 className="font-medium">Email Us</h3>
-                    <p className="text-gray-400 mt-1">support@productica.com</p>
-                    <p className="text-gray-400">sales@productica.com</p>
+                    <p className="text-gray-400 mt-1">info@productica.in</p>
+                    {/* <p className="text-gray-400">sales@productica.com</p> */}
                   </div>
                 </div>
                 
@@ -104,8 +104,8 @@ const ContactSection = () => {
                   </div>
                   <div>
                     <h3 className="font-medium">Call Us</h3>
-                    <p className="text-gray-400 mt-1">+1 (555) 123-4567</p>
-                    <p className="text-gray-400">Mon-Fri 9AM to 6PM EST</p>
+                    <p className="text-gray-400 mt-1">+91 7069133331</p>
+                    <p className="text-gray-400">Mon-Fri 9AM to 6PM IST</p>
                   </div>
                 </div>
                 
@@ -115,8 +115,8 @@ const ContactSection = () => {
                   </div>
                   <div>
                     <h3 className="font-medium">Visit Us</h3>
-                    <p className="text-gray-400 mt-1">123 Innovation Way</p>
-                    <p className="text-gray-400">San Francisco, CA 94107</p>
+                    <p className="text-gray-400 mt-1">Vadodara</p>
+                    <p className="text-gray-400">Gujarat, India</p>
                   </div>
                 </div>
               </div>
