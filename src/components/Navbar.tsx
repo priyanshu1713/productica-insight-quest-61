@@ -9,17 +9,9 @@ const Navbar = () => {
   const location = useLocation();
 
   const scrollToSection = (sectionId: string) => {
-    // If we're not on the home page, navigate to home first
+    // If we're not on the home page, navigate to home first with the hash
     if (location.pathname !== '/') {
-      navigate('/');
-      
-      // Use setTimeout to ensure scroll happens after navigation
-      setTimeout(() => {
-        const element = document.getElementById(sectionId);
-        if (element) {
-          element.scrollIntoView({ behavior: 'smooth' });
-        }
-      }, 100);
+      navigate(`/#${sectionId}`);
     } else {
       // We're already on the home page, just scroll
       const element = document.getElementById(sectionId);
@@ -73,9 +65,12 @@ const Navbar = () => {
           >
             Pricing
           </button>
-          <Link to="/contact" className="text-sm text-gray-300 hover:text-white transition-colors duration-300">
+          <button 
+            onClick={() => scrollToSection('contact')} 
+            className="text-sm text-gray-300 hover:text-white transition-colors duration-300"
+          >
             Contact
-          </Link>
+          </button>
         </div>
         
         <div className="flex items-center gap-4">

@@ -39,7 +39,7 @@ const Index = () => {
       <HowItWorks />
       <PricingPlans /> {/* already has id="pricing" */}
       <Testimonials />
-      <ContactSection />
+      <ContactSection /> {/* already has id="contact" */}
       <FAQ />
       <CTA />
       <Footer />
