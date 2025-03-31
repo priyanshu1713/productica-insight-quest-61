@@ -1,16 +1,82 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Mail, Phone, MapPin } from "lucide-react";
+import { useToast } from "@/hooks/use-toast";
 
 const ContactSection = () => {
-  const handleSubmit = (e: React.FormEvent) => {
+  const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: ''
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { id, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [id]: value
+    }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Add form submission logic here
-    console.log('Form submitted');
+    
+    // Simple validation
+    if (!formData.name || !formData.email || !formData.subject || !formData.message) {
+      toast({
+        title: "Validation Error",
+        description: "Please fill out all fields",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    // Email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.email)) {
+      toast({
+        title: "Invalid Email",
+        description: "Please enter a valid email address",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    try {
+      // In a real application, you would send this data to your backend
+      // This is a mock API call to simulate sending the message
+      await new Promise(resolve => setTimeout(resolve, 1500));
+      
+      toast({
+        title: "Message Sent!",
+        description: "We'll get back to you as soon as possible.",
+      });
+      
+      // Reset the form
+      setFormData({
+        name: '',
+        email: '',
+        subject: '',
+        message: ''
+      });
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "Failed to send message. Please try again later.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -35,6 +101,8 @@ const ContactSection = () => {
                   <Label htmlFor="name">Your Name</Label>
                   <Input 
                     id="name" 
+                    value={formData.name}
+                    onChange={handleChange}
                     placeholder="John Doe" 
                     required 
                     className="bg-productica-blue-dark/50 border-gray-700 focus:border-productica-blue"
@@ -44,7 +112,9 @@ const ContactSection = () => {
                   <Label htmlFor="email">Email Address</Label>
                   <Input 
                     id="email" 
-                    type="email" 
+                    type="email"
+                    value={formData.email}
+                    onChange={handleChange}
                     placeholder="john@example.com" 
                     required 
                     className="bg-productica-blue-dark/50 border-gray-700 focus:border-productica-blue"
@@ -56,6 +126,8 @@ const ContactSection = () => {
                 <Label htmlFor="subject">Subject</Label>
                 <Input 
                   id="subject" 
+                  value={formData.subject}
+                  onChange={handleChange}
                   placeholder="How can we help you?" 
                   required 
                   className="bg-productica-blue-dark/50 border-gray-700 focus:border-productica-blue"
@@ -66,6 +138,8 @@ const ContactSection = () => {
                 <Label htmlFor="message">Message</Label>
                 <Textarea 
                   id="message" 
+                  value={formData.message}
+                  onChange={handleChange}
                   placeholder="Tell us more about your project, needs, and timeline..." 
                   rows={5} 
                   required 
@@ -73,8 +147,12 @@ const ContactSection = () => {
                 />
               </div>
               
-              <Button type="submit" className="w-full bg-productica-blue hover:bg-productica-blue-light">
-                Send Message
+              <Button 
+                type="submit" 
+                disabled={isSubmitting}
+                className="w-full bg-productica-blue hover:bg-productica-blue-light"
+              >
+                {isSubmitting ? 'Sending...' : 'Send Message'}
               </Button>
             </form>
           </div>
