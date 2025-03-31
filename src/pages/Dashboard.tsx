@@ -1,8 +1,7 @@
-
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
-import { BarChart3, Brain, Search, PieChart, AlertCircle } from "lucide-react";
+import { BarChart3, Brain, Search, PieChart, AlertCircle, ArrowLeft } from "lucide-react";
 
 const Dashboard = () => {
   const navigate = useNavigate();
@@ -24,7 +23,17 @@ const Dashboard = () => {
   return (
     <div className="min-h-screen bg-productica-blue-dark">
       <div className="container mx-auto py-8">
-        <h1 className="text-3xl font-bold mb-8">Dashboard</h1>
+        {/* Add back button at the top */}
+        <div className="mb-8 flex items-center">
+          <Button 
+            variant="outline" 
+            className="mr-4 hover:bg-productica-blue/10"
+            onClick={() => navigate('/')}
+          >
+            <ArrowLeft className="mr-2 h-4 w-4" /> Back to Home
+          </Button>
+          <h1 className="text-3xl font-bold">Dashboard</h1>
+        </div>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
           <div className="bg-productica-blue-dark/50 border border-gray-800 rounded-lg p-6">
