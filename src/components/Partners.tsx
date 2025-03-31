@@ -9,32 +9,32 @@ const Partners = () => {
     { 
       name: "Microsoft for Startups", 
       logoPath: "/lovable-uploads/4b9f490c-a7d0-4a24-8818-7250a967b3d1.png", 
-      width: 160 
+      width: 180  // Increased from 160
     },
     { 
       name: "Responsible AI Licenses", 
       logoPath: "/lovable-uploads/36d2c6bc-76ae-4337-ac62-4e5763d61d2e.png", 
-      width: 180 
+      width: 200  // Increased from 180
     },
     { 
       name: "Google Cloud", 
       logoPath: "/lovable-uploads/058c3fd9-17d8-46a3-93e9-0cdaaf155384.png", 
-      width: 200 
+      width: 220  // Increased from 200
     },
     { 
       name: "NVIDIA", 
       logoPath: "/lovable-uploads/989ca7a1-727d-422b-a67a-1ba127b6ef61.png", 
-      width: 150 
+      width: 170  // Increased from 150
     },
     { 
       name: "Cloudflare", 
       logoPath: "/lovable-uploads/4654309b-6f14-44aa-b7a4-8a551083528f.png", 
-      width: 200 
+      width: 220  // Increased from 200
     },
     { 
       name: "Amazon", 
       logoPath: "/lovable-uploads/6c16efc4-16c3-4114-8416-2518ab0ea8f5.png", 
-      width: 140 
+      width: 160  // Increased from 140
     }
   ];
 
@@ -75,13 +75,13 @@ const Partners = () => {
             {partners.map((partner, index) => (
               <div 
                 key={index} 
-                className="flex-shrink-0 bg-productica-blue-dark/30 p-5 rounded-lg border border-gray-800 flex items-center justify-center h-20 partner-logo-container hover:border-productica-blue/50 transition-all duration-500"
+                className="flex-shrink-0 bg-productica-blue-dark/30 p-6 rounded-lg border border-gray-800 flex items-center justify-center h-24 partner-logo-container hover:border-productica-blue/50 transition-all duration-500"
                 style={{ minWidth: `${partner.width}px` }}
               >
                 <img 
                   src={partner.logoPath} 
                   alt={`${partner.name} logo`} 
-                  className="max-h-12 max-w-full object-contain opacity-80 hover:opacity-100 transition-opacity partner-logo" 
+                  className="max-h-16 max-w-full object-contain opacity-80 hover:opacity-100 transition-opacity partner-logo" 
                 />
               </div>
             ))}
@@ -90,13 +90,13 @@ const Partners = () => {
             {partners.map((partner, index) => (
               <div 
                 key={`duplicate-${index}`} 
-                className="flex-shrink-0 bg-productica-blue-dark/30 p-5 rounded-lg border border-gray-800 flex items-center justify-center h-20 partner-logo-container hover:border-productica-blue/50 transition-all duration-500"
+                className="flex-shrink-0 bg-productica-blue-dark/30 p-6 rounded-lg border border-gray-800 flex items-center justify-center h-24 partner-logo-container hover:border-productica-blue/50 transition-all duration-500"
                 style={{ minWidth: `${partner.width}px` }}
               >
                 <img 
                   src={partner.logoPath} 
                   alt={`${partner.name} logo`} 
-                  className="max-h-12 max-w-full object-contain opacity-80 hover:opacity-100 transition-opacity partner-logo" 
+                  className="max-h-16 max-w-full object-contain opacity-80 hover:opacity-100 transition-opacity partner-logo" 
                 />
               </div>
             ))}
