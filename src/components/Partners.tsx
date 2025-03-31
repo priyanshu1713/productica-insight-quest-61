@@ -4,13 +4,13 @@ import React from 'react';
 const Partners = () => {
   // Partner logos with their names for alt text
   const partners = [
-    { name: "AWS", logoPath: "/lovable-uploads/03fd57a7-e749-45d7-975e-d5a05a3a7659.png", width: 120 },
-    { name: "Microsoft for Startups", logoPath: "/lovable-uploads/b708cfc1-db2d-4e5a-ba6a-9edb331ccbe5.png", width: 140 },
-    { name: "NVIDIA", logoPath: "/lovable-uploads/454039b0-3ea3-4a15-a3a6-215beb95e218.png", width: 120 },
-    { name: "MongoDB", logoPath: "/lovable-uploads/135390a8-9999-41f3-a507-15bdce8926b8.png", width: 130 },
-    { name: "Cloudflare", logoPath: "/lovable-uploads/a8fa5f5d-7044-49e4-bd82-ff15492878f9.png", width: 150 },
-    { name: "Google Cloud", logoPath: "/lovable-uploads/2248fbb2-002a-42b0-93bc-b950a8efc8d7.png", width: 150 },
-    { name: "Responsible AI", logoPath: "/lovable-uploads/b708cfc1-db2d-4e5a-ba6a-9edb331ccbe5.png", width: 150 },
+    { name: "AWS", logoPath: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6", width: 120 },
+    { name: "Microsoft for Startups", logoPath: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b", width: 140 },
+    { name: "NVIDIA", logoPath: "https://images.unsplash.com/photo-1518770660439-4636190af475", width: 120 },
+    { name: "MongoDB", logoPath: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6", width: 130 },
+    { name: "Cloudflare", logoPath: "https://images.unsplash.com/photo-1518770660439-4636190af475", width: 130 },
+    { name: "Google Cloud", logoPath: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b", width: 130 },
+    { name: "IBM", logoPath: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6", width: 150 },
   ];
 
   return (
@@ -36,7 +36,7 @@ const Partners = () => {
                 <img 
                   src={partner.logoPath} 
                   alt={`${partner.name} logo`} 
-                  className="max-h-10 max-w-full object-contain hover:opacity-100 transition-opacity" 
+                  className="max-h-10 max-w-full object-contain opacity-80 hover:opacity-100 transition-opacity filter grayscale hover:grayscale-0" 
                 />
               </div>
             ))}
@@ -51,7 +51,7 @@ const Partners = () => {
                 <img 
                   src={partner.logoPath} 
                   alt={`${partner.name} logo`} 
-                  className="max-h-10 max-w-full object-contain hover:opacity-100 transition-opacity" 
+                  className="max-h-10 max-w-full object-contain opacity-80 hover:opacity-100 transition-opacity filter grayscale hover:grayscale-0" 
                 />
               </div>
             ))}
