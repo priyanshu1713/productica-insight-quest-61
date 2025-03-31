@@ -4,13 +4,13 @@ import React from 'react';
 const Partners = () => {
   // Partner logos with their names for alt text
   const partners = [
-    { name: "AWS", logoPath: "/lovable-uploads/9731e194-d6d0-47c1-8158-1868a883dcfc.png", width: 120 },
-    { name: "Microsoft for Startups", logoPath: "/lovable-uploads/eb5f8b12-b587-4a0a-9dab-a20f71c26524.png", width: 140 },
-    { name: "NVIDIA", logoPath: "/lovable-uploads/9731e194-d6d0-47c1-8158-1868a883dcfc.png", width: 120 },
-    { name: "MongoDB", logoPath: "/lovable-uploads/eb5f8b12-b587-4a0a-9dab-a20f71c26524.png", width: 130 },
-    { name: "Cloudflare", logoPath: "/lovable-uploads/9731e194-d6d0-47c1-8158-1868a883dcfc.png", width: 130 },
-    { name: "Google Cloud", logoPath: "/lovable-uploads/eb5f8b12-b587-4a0a-9dab-a20f71c26524.png", width: 130 },
-    { name: "Responsible AI", logoPath: "/lovable-uploads/9731e194-d6d0-47c1-8158-1868a883dcfc.png", width: 150 },
+    { name: "AWS", logoPath: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6", width: 120 },
+    { name: "Microsoft for Startups", logoPath: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b", width: 140 },
+    { name: "NVIDIA", logoPath: "https://images.unsplash.com/photo-1518770660439-4636190af475", width: 120 },
+    { name: "MongoDB", logoPath: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6", width: 130 },
+    { name: "Cloudflare", logoPath: "https://images.unsplash.com/photo-1518770660439-4636190af475", width: 130 },
+    { name: "Google Cloud", logoPath: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b", width: 130 },
+    { name: "IBM", logoPath: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6", width: 150 },
   ];
 
   return (
