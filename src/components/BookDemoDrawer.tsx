@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { useToast } from "@/hooks/use-toast";
 import { Button } from "@/components/ui/button";
@@ -58,7 +57,6 @@ const BookDemoDrawer = ({ trigger }: BookDemoDrawerProps) => {
   const handleSubmit = async (e: React.FormEvent, onClose: () => void) => {
     e.preventDefault();
     
-    // Validation
     if (!formData.name || !formData.email || !formData.preferredDate || !formData.preferredTime) {
       toast({
         title: "Missing Information",
@@ -68,7 +66,6 @@ const BookDemoDrawer = ({ trigger }: BookDemoDrawerProps) => {
       return;
     }
 
-    // Email validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(formData.email)) {
       toast({
@@ -82,7 +79,6 @@ const BookDemoDrawer = ({ trigger }: BookDemoDrawerProps) => {
     setIsSubmitting(true);
 
     try {
-      // In a real app, you would send this data to your backend
       await new Promise(resolve => setTimeout(resolve, 1500));
       
       toast({
@@ -90,7 +86,6 @@ const BookDemoDrawer = ({ trigger }: BookDemoDrawerProps) => {
         description: `We've scheduled your demo for ${formData.preferredDate} at ${formData.preferredTime}. You'll receive a confirmation email shortly.`,
       });
       
-      // Reset the form
       setFormData({
         name: '',
         email: '',
@@ -102,7 +97,6 @@ const BookDemoDrawer = ({ trigger }: BookDemoDrawerProps) => {
         message: ''
       });
       
-      // Close the drawer
       onClose();
     } catch (error) {
       toast({
@@ -257,18 +251,23 @@ const BookDemoDrawer = ({ trigger }: BookDemoDrawerProps) => {
           </div>
           
           <DrawerFooter>
-            <DrawerClose asChild>
-              {({ close }) => (
-                <Button 
-                  type="submit" 
-                  className="w-full bg-productica-blue hover:bg-productica-blue-light"
-                  disabled={isSubmitting}
-                  onClick={(e) => handleSubmit(e, close)}
-                >
-                  {isSubmitting ? 'Scheduling...' : 'Schedule Demo'}
-                </Button>
-              )}
-            </DrawerClose>
+            <Button 
+              type="submit" 
+              className="w-full bg-productica-blue hover:bg-productica-blue-light"
+              disabled={isSubmitting}
+              onClick={(e) => {
+                const closeDrawer = () => {
+                  const closeButton = document.querySelector('[data-state="open"] button[data-radix-collection-item]');
+                  if (closeButton instanceof HTMLElement) {
+                    closeButton.click();
+                  }
+                };
+                handleSubmit(e, closeDrawer);
+              }}
+            >
+              {isSubmitting ? 'Scheduling...' : 'Schedule Demo'}
+            </Button>
+            
             <DrawerClose asChild>
               <Button variant="outline" className="border-gray-700">
                 Cancel
