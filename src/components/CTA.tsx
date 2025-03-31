@@ -1,6 +1,8 @@
+
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from 'lucide-react';
+import BookDemoDrawer from './BookDemoDrawer';
 
 const CTA = () => {
   return (
@@ -27,9 +29,13 @@ const CTA = () => {
                 Start Free Trial <ArrowRight className="ml-2 h-4 w-4" />
               </a>
             </Button>
-            <Button size="lg" variant="outline">
-              <a href="/contact">Contact Sales</a>
-            </Button>
+            <BookDemoDrawer 
+              trigger={
+                <Button size="lg" variant="outline">
+                  Contact Sales
+                </Button>
+              }
+            />
           </div>
           <p className="text-gray-500 mt-6 text-sm">
             No credit card required. 14-day free trial.

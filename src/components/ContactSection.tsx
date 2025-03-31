@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -6,6 +5,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Mail, Phone, MapPin } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import BookDemoDrawer from './BookDemoDrawer';
 
 const ContactSection = () => {
   const { toast } = useToast();
@@ -203,9 +203,7 @@ const ContactSection = () => {
             <div className="mt-12 p-6 bg-productica-blue/10 border border-productica-blue/20 rounded-lg">
               <h3 className="font-semibold mb-2">Looking for a demo?</h3>
               <p className="text-gray-400 mb-4">Schedule a personalized walkthrough of Productica with one of our product specialists.</p>
-              <Button variant="outline" className="border-productica-blue text-productica-blue hover:bg-productica-blue/10">
-                Book a Demo
-              </Button>
+              <BookDemoDrawer />
             </div>
           </div>
         </div>
