@@ -1,8 +1,6 @@
-
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from 'lucide-react';
-import { Link } from "react-router-dom";
 
 const CTA = () => {
   return (
@@ -25,12 +23,12 @@ const CTA = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" className="bg-productica-blue hover:bg-productica-blue-light">
-              <Link to="/signup" className="flex items-center">
+              <a href="https://productica.in/agent.html" className="flex items-center">
                 Start Free Trial <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
+              </a>
             </Button>
             <Button size="lg" variant="outline">
-              <Link to="/contact">Contact Sales</Link>
+              <a href="/contact">Contact Sales</a>
             </Button>
           </div>
           <p className="text-gray-500 mt-6 text-sm">

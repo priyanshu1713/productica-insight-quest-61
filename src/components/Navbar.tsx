@@ -87,7 +87,7 @@ const Navbar = () => {
             <Link to="/login">Login</Link>
           </Button>
           <Button size="sm" className="bg-productica-blue hover:bg-productica-blue-light">
-            <Link to="/signup">Get Started</Link>
+            <a href="https://productica.in/agent.html">Get Started</a>
           </Button>
         </div>
       </div>

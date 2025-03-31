@@ -1,8 +1,6 @@
-
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
-import { Link } from "react-router-dom";
 
 const Hero = () => {
   return (
@@ -34,12 +32,12 @@ const Hero = () => {
           
           <div className="flex flex-col sm:flex-row gap-4 animate-fade-in">
             <Button size="lg" className="bg-productica-blue hover:bg-productica-blue-light">
-              <Link to="/signup" className="flex items-center">
+              <a href="https://productica.in/agent.html" className="flex items-center">
                 Start Your Analysis <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
+              </a>
             </Button>
             <Button size="lg" variant="outline">
-              <Link to="/features">Explore Features</Link>
+              <a href="/features">Explore Features</a>
             </Button>
           </div>
           
