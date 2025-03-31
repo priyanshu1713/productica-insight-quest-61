@@ -45,11 +45,11 @@ const Index = () => {
     <div className="min-h-screen bg-productica-blue-dark">
       <Navbar />
       <Hero />
-      <Features id="features" />
+      <Features />
       <HowItWorks />
-      <PricingPlans id="pricing" />
+      <PricingPlans />
       <Testimonials />
-      <ContactSection id="contact" />
+      <ContactSection />
       <FAQ />
       <CTA />
       <Footer />
