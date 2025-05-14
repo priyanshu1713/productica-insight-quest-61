@@ -42,7 +42,16 @@ const Index = () => {
   }, [location]);
 
   return (
-    <div className="min-h-screen bg-productica-blue-dark">
+    <div className="min-h-screen bg-productica-blue-dark relative">
+      {/* Decorative background elements */}
+      <div className="fixed inset-0 z-[-1] pointer-events-none">
+        {/* These are decorative blobs/gradients that will appear behind content */}
+        <div className="absolute top-0 right-0 w-96 h-96 bg-productica-blue/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-productica-purple/10 rounded-full blur-3xl"></div>
+        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-productica-indigo/10 rounded-full blur-3xl"></div>
+      </div>
+      
+      {/* Main content */}
       <Navbar />
       <Hero />
       <Features />
