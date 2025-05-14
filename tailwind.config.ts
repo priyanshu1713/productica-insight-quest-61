@@ -64,15 +64,16 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				},
 				productica: {
-					blue: '#2563eb',
-					'blue-dark': '#0f172a',
-					'blue-light': '#3b82f6',
-					purple: '#8b5cf6',
-					indigo: '#4f46e5',
-					'indigo-light': '#818cf8',
-					'purple-light': '#a78bfa',
+					dark: '#050505',
+					'dark-accent': '#121212',
+					'dark-hover': '#1a1a1a',
+					black: '#000000',
+					gray: '#222222',
+					'gray-light': '#333333',
+					accent: '#ffffff',
+					'accent-muted': '#cccccc',
 					glass: 'rgba(255, 255, 255, 0.05)',
-					'glass-dark': 'rgba(0, 0, 0, 0.2)',
+					'glass-dark': 'rgba(0, 0, 0, 0.5)',
 				}
 			},
 			borderRadius: {
@@ -145,9 +146,9 @@ export default {
 			backgroundImage: {
 				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
 				'hero-pattern': 'url("/public/lovable-uploads/ce6fbe52-5066-42c4-974d-0032cd76df13.png")',
-				'blue-gradient': 'linear-gradient(to right, #0f172a, #1e40af)',
-				'glass-gradient': 'linear-gradient(135deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.03) 100%)',
-				'glow-gradient': 'radial-gradient(circle, rgba(59, 130, 246, 0.3) 0%, rgba(15, 23, 42, 0) 70%)',
+				'dark-gradient': 'linear-gradient(to right, #0a0a0a, #121212)',
+				'glass-gradient': 'linear-gradient(135deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.01) 100%)',
+				'glow-gradient': 'radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, rgba(0, 0, 0, 0) 70%)',
 			}
 		}
 	},
