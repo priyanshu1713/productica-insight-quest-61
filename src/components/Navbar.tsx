@@ -56,10 +56,10 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="py-4 border-b border-white/10 sticky top-0 z-50 backdrop-blur-md bg-productica-black/80">
+    <nav className="py-4 border-b border-gray-800 sticky top-0 z-50 backdrop-blur-md bg-productica-blue-dark/80">
       <div className="container mx-auto flex items-center justify-between">
         <div className="flex items-center gap-2">
-          <div className="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center transform hover:scale-105 transition-transform duration-300">
+          <div className="w-10 h-10 rounded-lg bg-productica-blue flex items-center justify-center transform hover:scale-105 transition-transform duration-300">
             <img 
               src="/lovable-uploads/52f9b08d-8558-4dae-b4bd-dad6b850602e.png" 
               alt="Productica Logo" 
@@ -78,7 +78,7 @@ const Navbar = () => {
           >
             Home
             {activeLink === null && (
-              <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-white animate-fade-in" />
+              <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-productica-blue animate-fade-in" />
             )}
           </a>
           <button 
@@ -87,7 +87,7 @@ const Navbar = () => {
           >
             Features
             {activeLink === 'features' && (
-              <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-white animate-fade-in" />
+              <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-productica-blue animate-fade-in" />
             )}
           </button>
           <button 
@@ -96,7 +96,7 @@ const Navbar = () => {
           >
             Pricing
             {activeLink === 'pricing' && (
-              <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-white animate-fade-in" />
+              <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-productica-blue animate-fade-in" />
             )}
           </button>
           <button 
@@ -105,7 +105,7 @@ const Navbar = () => {
           >
             Contact
             {activeLink === 'contact' && (
-              <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-white animate-fade-in" />
+              <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-productica-blue animate-fade-in" />
             )}
           </button>
         </div>
@@ -115,10 +115,10 @@ const Navbar = () => {
             <div className="h-2 w-2 rounded-full bg-green-500 animate-pulse-slow"></div>
             <span className="text-xs text-gray-400">AI Online</span>
           </div>
-          <Button variant="outline" size="sm" className="hidden md:flex hover:bg-white/5 border-white/20 transition-colors duration-300">
+          <Button variant="outline" size="sm" className="hidden md:flex hover:bg-productica-blue/10 transition-colors duration-300">
             <Link to="/login">Login</Link>
           </Button>
-          <Button size="sm" className="bg-white hover:bg-gray-200 text-productica-dark transition-all duration-300 transform hover:scale-105">
+          <Button size="sm" className="bg-productica-blue hover:bg-productica-blue-light transition-all duration-300 transform hover:scale-105">
             <a href="https://productica.in/agent.html">Get Started</a>
           </Button>
           
@@ -134,7 +134,7 @@ const Navbar = () => {
       
       {/* Mobile menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 w-full bg-productica-black/95 backdrop-blur-md border-b border-white/10 animate-fade-in">
+        <div className="md:hidden absolute top-full left-0 w-full bg-productica-blue-dark/95 backdrop-blur-md border-b border-gray-800 animate-fade-in">
           <div className="container mx-auto py-4 flex flex-col space-y-4">
             <a 
               href="/" 
@@ -173,11 +173,11 @@ const Navbar = () => {
             >
               Contact
             </button>
-            <div className="flex items-center justify-between pt-2 border-t border-white/10">
-              <Button variant="outline" size="sm" className="w-full mr-2 border-white/20">
+            <div className="flex items-center justify-between pt-2 border-t border-gray-800">
+              <Button variant="outline" size="sm" className="w-full mr-2">
                 <Link to="/login" onClick={() => toggleMobileMenu()}>Login</Link>
               </Button>
-              <Button size="sm" className="bg-white hover:bg-gray-200 text-productica-dark w-full">
+              <Button size="sm" className="bg-productica-blue hover:bg-productica-blue-light w-full">
                 <a href="https://productica.in/agent.html" onClick={() => toggleMobileMenu()}>
                   Get Started
                 </a>

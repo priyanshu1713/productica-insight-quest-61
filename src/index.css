@@ -1,48 +1,47 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
-    --background: 0 0% 3%;
-    --foreground: 0 0% 98%;
+    --background: 222 47% 11%;
+    --foreground: 210 40% 98%;
 
-    --card: 0 0% 5%;
-    --card-foreground: 0 0% 98%;
+    --card: 222 47% 11%;
+    --card-foreground: 210 40% 98%;
 
-    --popover: 0 0% 3%;
-    --popover-foreground: 0 0% 98%;
+    --popover: 222 47% 11%;
+    --popover-foreground: 210 40% 98%;
 
-    --primary: 0 0% 98%;
-    --primary-foreground: 0 0% 3%;
+    --primary: 217 91% 60%;
+    --primary-foreground: 210 40% 98%;
 
-    --secondary: 0 0% 8%;
-    --secondary-foreground: 0 0% 98%;
+    --secondary: 217 32% 17%;
+    --secondary-foreground: 210 40% 98%;
 
-    --muted: 0 0% 10%;
-    --muted-foreground: 0 0% 70%;
+    --muted: 217 32% 17%;
+    --muted-foreground: 215 20% 75%;
 
-    --accent: 0 0% 15%;
-    --accent-foreground: 0 0% 98%;
+    --accent: 250 89% 65%;
+    --accent-foreground: 210 40% 98%;
 
     --destructive: 0 62% 30%;
-    --destructive-foreground: 0 0% 98%;
+    --destructive-foreground: 210 40% 98%;
 
-    --border: 0 0% 15%;
-    --input: 0 0% 15%;
-    --ring: 0 0% 40%;
+    --border: 217 32% 17%;
+    --input: 217 32% 17%;
+    --ring: 224 76% 48%;
 
     --radius: 0.5rem;
 
-    --sidebar-background: 0 0% 5%;
-    --sidebar-foreground: 0 0% 98%;
-    --sidebar-primary: 0 0% 98%;
-    --sidebar-primary-foreground: 0 0% 3%;
-    --sidebar-accent: 0 0% 15%;
-    --sidebar-accent-foreground: 0 0% 98%;
-    --sidebar-border: 0 0% 15%;
-    --sidebar-ring: 0 0% 98%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
   }
 }
 
@@ -52,7 +51,7 @@
   }
 
   body {
-    @apply bg-productica-dark text-foreground;
+    @apply bg-productica-blue-dark text-foreground;
   }
 
   .fancy-heading {
@@ -71,34 +70,34 @@
     @apply py-12 md:py-20;
   }
 
-  .white-glow {
+  .blue-glow {
     @apply relative;
   }
 
-  .white-glow::after {
-    @apply content-[''] absolute -z-10 w-full h-full top-0 left-0 opacity-20 blur-xl;
-    background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, rgba(0, 0, 0, 0) 70%);
+  .blue-glow::after {
+    @apply content-[''] absolute -z-10 w-full h-full top-0 left-0 opacity-50 blur-xl;
+    background: radial-gradient(circle, rgba(59, 130, 246, 0.3) 0%, rgba(15, 23, 42, 0) 70%);
   }
   
   /* Glass effect utilities */
   .glass {
-    @apply bg-white/5 backdrop-blur-md border border-white/5 shadow-lg;
+    @apply bg-white/5 backdrop-blur-md border border-white/10 shadow-lg;
   }
   
   .glass-card {
-    @apply bg-productica-dark-accent/80 backdrop-blur-lg border border-white/5 shadow-lg;
+    @apply bg-productica-blue-dark/70 backdrop-blur-lg border border-productica-blue/20 shadow-lg;
   }
   
   .glass-dark {
-    @apply bg-black/40 backdrop-blur-md border border-white/5 shadow-lg;
+    @apply bg-black/20 backdrop-blur-md border border-white/5 shadow-lg;
   }
   
   .glass-light {
-    @apply bg-white/5 backdrop-blur-md border border-white/10 shadow-lg;
+    @apply bg-white/10 backdrop-blur-md border border-white/20 shadow-lg;
   }
   
   .glass-primary {
-    @apply bg-white/5 backdrop-blur-md border border-white/10 shadow-lg;
+    @apply bg-productica-blue/10 backdrop-blur-md border border-productica-blue/30 shadow-lg;
   }
   
   .glow {
@@ -106,8 +105,8 @@
   }
   
   .glow::before {
-    @apply content-[''] absolute -z-10 w-full h-full top-0 left-0 opacity-20 blur-xl rounded-lg;
-    background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, rgba(0, 0, 0, 0) 70%);
+    @apply content-[''] absolute -z-10 w-full h-full top-0 left-0 opacity-30 blur-xl rounded-lg;
+    background: radial-gradient(circle, rgba(59, 130, 246, 0.4) 0%, rgba(15, 23, 42, 0) 70%);
   }
 }
 
